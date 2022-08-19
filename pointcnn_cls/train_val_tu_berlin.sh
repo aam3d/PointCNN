@@ -3,8 +3,8 @@
 gpu=
 setting=
 models_folder="../../models/cls/"
-train_files="../../data/tu_berlin/train_files.txt"
-val_files="../../data/tu_berlin/test_files.txt"
+train_files="../../data/tu_berlin/svg/train_files.txt"
+val_files="../../data/tu_berlin/svg/test_files.txt"
 
 usage() { echo "train/val pointcnn_cls with -g gpu_id -x setting options"; }
 
@@ -45,4 +45,6 @@ then
 fi
 
 echo "Train/Val with setting $setting on GPU $gpu!"
-CUDA_VISIBLE_DEVICES=$gpu python3 ../train_val_cls.py -t $train_files -v $val_files -s $models_folder -m pointcnn_cls -x $setting > $models_folder/pointcnn_cls_$setting.txt 2>&1 &
+CUDA_VISIBLE_DEVICES=$gpu
+echo "python3 ../train_val_cls.py -t $train_files -v $val_files -s $models_folder -m pointcnn_cls -x $setting > $models_folder/pointcnn_cls_$setting.txt 2>&1 &"
+python3 ../train_val_cls.py -t $train_files -v $val_files -s $models_folder -m pointcnn_cls -x $setting
