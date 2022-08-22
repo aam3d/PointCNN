@@ -33,7 +33,7 @@ def main():
         pred_list = [pred for pred in os.listdir(os.path.join(args.datafolder,category)) if pred.split(".")[-1] == "h5" and "pred" in pred]
         for pred_file in pred_list:
             print(os.path.join(args.datafolder,category, pred_file))
-            data = h5py.File(os.path.join(args.datafolder,category, pred_file))
+            data = h5py.File(os.path.join(args.datafolder,category, pred_file), 'r')
             labels_seg = data['label_seg'][...].astype(np.int64)
             indices = data['indices_split_to_full'][...].astype(np.int64)
             confidence = data['confidence'][...].astype(np.float32)

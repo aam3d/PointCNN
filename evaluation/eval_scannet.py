@@ -52,7 +52,7 @@ def main():
         test_file = pred_file.replace("_pred","")
 
         # load pred .h5
-        data_pred = h5py.File(os.path.join(args.datafolder, pred_file))
+        data_pred = h5py.File(os.path.join(args.datafolder, pred_file), 'r')
 
         pred_labels_seg = data_pred['label_seg'][...].astype(np.int64)
         pred_indices = data_pred['indices_split_to_full'][...].astype(np.int64)
