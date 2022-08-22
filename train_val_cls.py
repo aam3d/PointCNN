@@ -16,14 +16,13 @@ import data_utils
 import numpy as np
 import pointfly as pf
 import tensorflow as tf
+configuration = tf.compat.v1.ConfigProto()
+configuration.gpu_options.allow_growth = True
+session = tf.compat.v1.Session(config=configuration)
 from datetime import datetime
 
 
 def main():
-    configuration = tf.compat.v1.ConfigProto()
-    configuration.gpu_options.allow_growth = True
-    session = tf.compat.v1.Session(config=configuration)
-
     parser = argparse.ArgumentParser()
     parser.add_argument('--path', '-t', help='Path to data', required=True)
     parser.add_argument('--path_val', '-v', help='Path to validation data')

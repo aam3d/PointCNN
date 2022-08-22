@@ -16,10 +16,14 @@ import data_utils
 import numpy as np
 import pointfly as pf
 import tensorflow as tf
+configuration = tf.compat.v1.ConfigProto()
+configuration.gpu_options.allow_growth = True
+session = tf.compat.v1.Session(config=configuration)
 from datetime import datetime
 
 
 def main():
+
     parser = argparse.ArgumentParser()
     parser.add_argument('--filelist', '-t', help='Path to training set ground truth (.txt)', required=True)
     parser.add_argument('--filelist_val', '-v', help='Path to validation set ground truth (.txt)', required=True)

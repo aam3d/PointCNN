@@ -1,4 +1,8 @@
 import tensorflow as tf
+configuration = tf.compat.v1.ConfigProto()
+configuration.gpu_options.allow_growth = True
+session = tf.compat.v1.Session(config=configuration)
+
 from tensorflow.python.framework import ops
 import sys
 import os

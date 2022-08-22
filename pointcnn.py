@@ -5,6 +5,9 @@ from __future__ import print_function
 import math
 import pointfly as pf
 import tensorflow as tf
+configuration = tf.compat.v1.ConfigProto()
+configuration.gpu_options.allow_growth = True
+session = tf.compat.v1.Session(config=configuration)
 
 
 def xconv(pts, fts, qrs, tag, N, K, D, P, C, C_pts_fts, is_training, with_X_transformation, depth_multiplier,

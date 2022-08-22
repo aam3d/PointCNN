@@ -1,4 +1,8 @@
 import tensorflow as tf
+configuration = tf.compat.v1.ConfigProto()
+configuration.gpu_options.allow_growth = True
+session = tf.compat.v1.Session(config=configuration)
+
 import numpy as np
 from tf_interpolate import three_nn, three_interpolate
 
