@@ -1,9 +1,11 @@
 import os
 import sys
 import tensorflow as tf
-configuration = tf.compat.v1.ConfigProto()
+# configuration = tf.compat.v1.ConfigProto()
+configuration = tf.ConfigProto()
 configuration.gpu_options.allow_growth = True
-session = tf.compat.v1.Session(config=configuration)
+# session = tf.compat.v1.Session(config=configuration)
+session = tf.Session(config=configuration)
 
 BASE_DIR = os.path.dirname(__file__)
 sys.path.append(BASE_DIR)

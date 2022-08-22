@@ -8,9 +8,11 @@ import numpy as np
 from tf_interpolate import three_nn, three_interpolate
 
 import tensorflow as tf
-configuration = tf.compat.v1.ConfigProto()
+# configuration = tf.compat.v1.ConfigProto()
+configuration = tf.ConfigProto()
 configuration.gpu_options.allow_growth = True
-session = tf.compat.v1.Session(config=configuration)
+# session = tf.compat.v1.Session(config=configuration)
+session = tf.Session(config=configuration)
 
 
 pts2 = np.array([[0,0,1],[1,0,0],[0,1,0],[1,1,0]]).astype('float32')

@@ -7,9 +7,11 @@ Date: November 2017
 import numpy as np
 
 import tensorflow as tf
-configuration = tf.compat.v1.ConfigProto()
+# configuration = tf.compat.v1.ConfigProto()
+configuration = tf.ConfigProto()
 configuration.gpu_options.allow_growth = True
-session = tf.compat.v1.Session(config=configuration)
+# session = tf.compat.v1.Session(config=configuration)
+session = tf.Session(config=configuration)
 
 def _variable_on_cpu(name, shape, initializer, use_fp16=False):
   """Helper to create a Variable stored on CPU memory.

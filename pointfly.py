@@ -6,9 +6,11 @@ import math
 import random
 import numpy as np
 import tensorflow as tf
-configuration = tf.compat.v1.ConfigProto()
+# configuration = tf.compat.v1.ConfigProto()
+configuration = tf.ConfigProto()
 configuration.gpu_options.allow_growth = True
-session = tf.compat.v1.Session(config=configuration)
+# session = tf.compat.v1.Session(config=configuration)
+session = tf.Session(config=configuration)
 
 from transforms3d.euler import euler2mat
 
